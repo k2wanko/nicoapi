@@ -67,7 +67,7 @@ request `user_session`
 |:-----------|:----------|:--------|
 | string     | ms\_id     | Meesage Server id|
 | string     | thread\_id | Thread id|
-| string     | res\_from  | back number (default: -100) |
+| number     | res\_from  | back number (default: -100) |
 
 
 # License
