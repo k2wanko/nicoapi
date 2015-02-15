@@ -61,7 +61,7 @@ request `user_session`
 
 #### messages - Get video comment. (geting user video only)
 
-`nico.video.flv(options)`
+`nico.video.messages(options)`
 
 |Parameters                      |||
 |:-----------|:----------|:--------|
