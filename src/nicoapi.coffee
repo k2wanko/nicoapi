@@ -88,10 +88,10 @@ class NicoAPI
 
         # alpha
         messages:
-          uri: "http://msg.nicovideo.jp/:ms_id/api.json/thread?version=#{VERSION}&thread=:thread_id&res_from=:per"
+          uri: "http://msg.nicovideo.jp/:ms_id/api.json/thread?version=#{VERSION}&thread=:thread_id&res_from=:res_from"
           method: GET
           params:
-            per: -100
+            res_from: -100
           parse: (res)->
             data = {}
             for item in JSON.parse res
