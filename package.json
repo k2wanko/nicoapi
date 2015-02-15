@@ -1,0 +1,41 @@
+{
+  "name": "nicoapi",
+  "description": "Nico API is Nicovideo API Client",
+  "version": "0.1.0",
+  "author": "k2wanko <k2.wanko@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/k2wanko/nicoapi/issues"
+  },
+  "dependencies": {
+    "es6-promise": "^2.0.1",
+    "path-to-regexp": "^1.0.3",
+    "request-promise": "^0.4.0",
+    "underscore": "^1.7.0",
+    "xml2js": "^0.4.5"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/k2wanko/nicoapi",
+  "keywords": [
+    "nicovideo",
+    "nicoapi",
+    "api"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "http://k2wanko.mit-license.org/"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k2wanko/nicoapi.git"
+  },
+  "scripts": {
+    "prepublish": "coffee -o ./lib -c src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
