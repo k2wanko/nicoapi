@@ -18,7 +18,7 @@ var NicoAPI = require('nicoapi');
 
 var nico = new NicoAPI();
 
-nico.video({id: 'sm...'})
+nico.video.get({id: 'sm...'})
 .then(function(info){
   console.dir(info);
 })
@@ -32,7 +32,7 @@ nico.video({id: 'sm...'})
 
 #### login - Login the Niconico.
 
-`nico.users.login(options)`
+`nico.users.login.post(options)`
 
 |Parameters                     |||
 |:-----------|:---------|:--------|
@@ -43,7 +43,7 @@ nico.video({id: 'sm...'})
 
 #### getthumbinfo - Get video information.
 
-`nico.video(options)`
+`nico.video.get(options)`
 
 |Parameters               |||
 |:-----------|:---|:--------|
@@ -51,7 +51,7 @@ nico.video({id: 'sm...'})
 
 #### getflv - Get video path. (e.g. mp4)
 
-`nico.video.flv(options)`
+`nico.video.flv.get(options)`
 
 request `user_session`
 
@@ -62,7 +62,7 @@ request `user_session`
 
 #### messages - Get video comment. (geting user video only)
 
-`nico.video.messages(options)`
+`nico.video.messages.get(options)`
 
 |Parameters                      |||
 |:-----------|:----------|:--------|
