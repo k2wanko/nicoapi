@@ -14,7 +14,10 @@
     "xml2js": "^0.4.5"
   },
   "devDependencies": {
-    "coffee-script": "^1.9.0"
+    "coffee-script": "^1.9.0",
+    "espower-coffee": "^0.10.0",
+    "mocha": "^2.1.0",
+    "power-assert": "^0.10.2"
   },
   "files": [
     "lib"
@@ -36,6 +39,7 @@
   },
   "scripts": {
     "prepublish": "coffee -o ./lib -c src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run prepublish",
+    "test": "mocha --require 'espower-coffee/guess' test/**/*.coffee"
   }
 }
