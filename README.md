@@ -3,6 +3,7 @@
 
 Nico API is Nicovideo API Client
 
+[![Build Status](https://travis-ci.org/k2wanko/nicoapi.svg)](https://travis-ci.org/k2wanko/nicoapi)
 
 ## Install
 
