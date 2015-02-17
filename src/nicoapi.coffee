@@ -125,7 +125,9 @@ class NicoAPI
       for key, val of resource
         child = resource[key]['resource'] or null
         delete resource[key]['resource'] if child
-        @[key] = buildRequest.call(@, val)
+        method = val.method
+        @[key] = {}
+        @[key][method] = buildRequest.call(@, val)
         build.call(@[key], child) if child
         
     build.call(@, Resource)

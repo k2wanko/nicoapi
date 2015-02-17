@@ -8,8 +8,14 @@ describe "video", ->
 
   it "getthumbinfo - Get video information.", (done)->
     nico = new NicoAPI()
-    nico.video id: VIDEO_ID
+    nico.video.get id: VIDEO_ID
     .then (info)->
       assert info.video_id
       done()
     .catch done
+
+
+
+
+
+
