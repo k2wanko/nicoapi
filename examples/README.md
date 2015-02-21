@@ -11,3 +11,9 @@ $ ID="1397552685" coffee ./video_info.coffee
 ```
 $ ID="1397552685" MAIL="..." PASSWORD="..." coffee ./video_flv.coffee
 ```
+
+## auth nicolive alert
+
+```
+$ MAIL="..." PASSWORD="..." coffee ./live_auth.coffee
+```

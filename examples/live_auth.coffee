@@ -10,6 +10,8 @@ nico.users.login.post
   password: PASSWORD
   site:     'nicolive_antenna'
 .then (res)->
-  console.log 'res', res
+  nico.live.alert.status.post res
+.then (res)->
+  console.log 'live', res
 .catch (err)->
   throw err
