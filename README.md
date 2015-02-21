@@ -71,6 +71,15 @@ request `user_session`
 | string     | thread\_id | Thread id|
 | number     | res\_from  | back number (default: -100) |
 
+### Live/Alert
+
+#### status
+
+`nico.live.alert.status.post`
+
+|Parameters                      |||
+|:-----------|:----------|:--------|
+| string     | ticket    | ticket obtained in antenna login|
 
 # License
 
