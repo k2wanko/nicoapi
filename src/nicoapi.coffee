@@ -33,13 +33,22 @@ class NicoAPI
     users:
       resource:
         login:
-          uri: "https://secure.nicovideo.jp/secure/login?site=:type"
+          uri: "https://secure.nicovideo.jp/secure/login?site=:site"
           params:
-            type: "niconico"
+            site: "niconico"
           method: POST
           resolveWithFullResponse: true
           simple: false
           parse: (res)->
+
+            if @params.site is 'nicolive_antenna'
+              return parseXml(res.body)
+              .then (data)->
+                data = data.nicovideo_user_response
+                if error = res.error?[0]
+                  throw new Error error.description[0]
+                {ticket: data.ticket[0]}
+            
             session = null
             for cookies in res.headers['set-cookie']
               for cookie in cookies.split '; '
@@ -149,7 +158,7 @@ class NicoAPI
     options.method = GET unless options.method
     
     (params)->
-      @params = _.clone(params = _.defaults(options.params or {}, params))
+      @params = _.clone(params = _.defaults(params, options.params or {}))
       @method = options.method
 
       options.uri = parseUri options.uri, params

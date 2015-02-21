@@ -38,6 +38,7 @@ nico.video.get({id: 'sm...'})
 |:-----------|:---------|:--------|
 | string     | mail_tel | user email or phone number|
 | string     | password | user password|
+| string     | site     | login site \['niconico', 'nicolive\_antenna'\] (default: niconico)|
 
 ### Video
 

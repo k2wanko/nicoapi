@@ -13,9 +13,3 @@ describe "video", ->
       assert info.video_id
       done()
     .catch done
-
-
-
-
-
-
