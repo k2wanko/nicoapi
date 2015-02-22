@@ -73,13 +73,21 @@ request `user_session`
 
 ### Live/Alert
 
-#### status
+#### getalertstatus - Get alert status
 
-`nico.live.alert.status.post`
+`nico.live.alert.status.post(options)`
 
 |Parameters                      |||
 |:-----------|:----------|:--------|
 | string     | ticket    | ticket obtained in antenna login|
+
+#### getalertinfo - No auth get alert status
+
+`nico.live.alert.info.get()`
+
+|Parameters                      |||
+|:-----------|:----------|:--------|
+| no                             |||
 
 # License
 
