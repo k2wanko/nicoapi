@@ -9,7 +9,10 @@ nico = new NicoAPI()
 nico.users.login.post
   mail_tel: MAIL # mail_tel or mail
   password: PASSWORD
-.then -> nico.video.flv.get id: ID
+.then (res)->
+  console.log res
+  res.id = ID
+  nico.video.flv.get res
 .then (res)->
   console.log 'flv', res
 .catch (err)->
