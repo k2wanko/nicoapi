@@ -5,10 +5,10 @@ Request = require './request'
 _ = require 'underscore'
 {parseXml} = require './util'
 
-alertParse = (res)->
+liveParse = (res)->
   parseXml res
   .then (res)->
-    res = res.getalertstatus
+    res = res.getalertstatus or res.getplayerstatus
     if error = res.error?[0]
       throw new Error error.description
     data = {}
@@ -27,15 +27,23 @@ alertParse = (res)->
     data
 
 class LiveRequest extends Request
+
+  info: new class extends Request
+    uri: "http://live.nicovideo.jp/api/getplayerstatus?v=:id"
+    method: GET
+    cookies:
+      user_session: null
+    parse: liveParse
+  
   alert: new class extends Request
     status: new class extends Request
       uri: "http://live.nicovideo.jp/api/getalertstatus"
       method: POST
-      parse: alertParse
+      parse: liveParse
 
     info: new class extends Request
       uri: "http://live.nicovideo.jp/api/getalertinfo"
       method: GET
-      parse: alertParse
+      parse: liveParse
 
 module.exports = exports = new LiveRequest
