@@ -9,12 +9,3 @@ node_js:
 branches:
   only:
   - master
-
-deploy:
-  provider: npm
-  email: k2.wanko@gmail.com
-  api_key:
-    secure: UdMMcOM8b61W14eg4ra8xgapmvGjSGPP9SHHjrMZ+hqzpKaOBnadyhM9DWOdzu/aJOoLfPIGTHQyezq9MkirsbgmWkLnLGPk99ZwYSznp7IA8Mf477/5+yAHYd/p77uo+upUh4EGfr/Qx4qVLjV/WsqZGv0YrWzKMGI8gQ/IuDM=
-  on:
-    tags: true
-    repo: k2wanko/nicoapi
