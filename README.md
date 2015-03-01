@@ -73,6 +73,17 @@ request `user_session`
 
 ### Live/Alert
 
+#### getplayerstatus - Get Live info
+
+`nico.live.info.get`
+
+request `user_session`
+
+|Parameters                      |||
+|:-----------|:----------|:--------|
+| string     | id            | live id|
+| string     | user\_session | session id|
+
 #### getalertstatus - Get alert status
 
 `nico.live.alert.status.post(options)`
