@@ -73,6 +73,16 @@ request `user_session`
 
 ### Live/Alert
 
+`nico.live.get`
+
+|Parameters                      |||
+|:-----------|:----------|:--------|
+| number     | from      | start page|
+| number     | limit     | get item count|
+| string     | order     | d or a (default: a)|
+| string     | pt        | pt is provider. official, channel, community (default: all) |
+| string     | sort      | sort type. start\_time, view\_counter, comment\_num|
+
 #### getplayerstatus - Get Live info
 
 `nico.live.info.get`

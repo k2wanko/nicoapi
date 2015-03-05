@@ -28,6 +28,17 @@ liveParse = (res)->
 
 class LiveRequest extends Request
 
+  uri: "http://api.ce.nicovideo.jp/liveapi/v1/video.onairlist?__format=json"
+  method: GET
+  parmas:
+    from: 0
+    limit: 50
+    order: 'a' # d,a
+    pt: '' # official, channel, community
+    sort: 'start_time' # start_time, view_counter, comment_num
+  parse: (res)->
+    JSON.parse(res).nicolive_video_response
+  
   info: new class extends Request
     uri: "http://live.nicovideo.jp/api/getplayerstatus?v=:id"
     method: GET
