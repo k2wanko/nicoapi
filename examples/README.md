@@ -12,6 +12,12 @@ $ ID="1397552685" coffee ./video_info.coffee
 $ ID="1397552685" MAIL="..." PASSWORD="..." coffee ./video_flv.coffee
 ```
 
+## get live list
+
+```
+$ coffee ./live_list.coffee
+```
+
 ## get live info
 
 ```
