@@ -1,6 +1,8 @@
 
 class NicoAPI
 
+  @MessageSocket: require './message_socket'
+
   users: require './users_request'
   video: require './video_request'
   live:  require './live_request'
