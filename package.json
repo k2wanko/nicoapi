@@ -7,7 +7,9 @@
     "url": "https://github.com/k2wanko/nicoapi/issues"
   },
   "dependencies": {
+    "debug": "^2.1.1",
     "es6-promise": "^2.0.1",
+    "eventemitter2": "^0.4.14",
     "path-to-regexp": "^1.0.3",
     "request-promise": "^0.4.0",
     "underscore": "^1.7.0",
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.9.0",
+    "colors": "^1.0.3",
     "espower-coffee": "^0.10.0",
     "mocha": "^2.1.0",
     "power-assert": "^0.10.2"

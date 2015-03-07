@@ -24,6 +24,12 @@ $ coffee ./live_list.coffee
 $ ID="..." MAIL="..." PASSWORD="..." coffee ./live_info.coffee
 ```
 
+## Live comment
+
+```
+$ DEBUG="*" ID="..." MAIL="..." PASSWORD="..." coffee ./live_comment.coffee
+```
+
 ## auth nicolive alert
 
 ```
