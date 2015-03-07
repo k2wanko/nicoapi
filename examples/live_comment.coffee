@@ -23,8 +23,8 @@ nico.users.login.post
       return unless body = data.body
       id = data.user_id
       
-      console.log (id + ([0...(27-id.length)].map(-> " ").join("")))[if data.premium is "3" then 'red' else 'blue'],
-      (if data.premium is "1" then 'P'.yellow else " "),
+      console.log (id + ([0...(27-id.length)].map(-> " ").join("")))[if data.isOwner() then 'red' else 'blue'],
+      (if data.isPremium() then 'P'.yellow else " "),
       body
 
   socket.on 'error', (e)->
