@@ -1,3 +1,5 @@
+colors = require 'colors'
+
 NicoAPI = require '../src'
 
 nico = new NicoAPI
@@ -15,8 +17,16 @@ nico.users.login.post
 .then (res)->
   socket = new NicoAPI.MessageSocket
   socket.connect res.ms
+  
   socket.on 'data', (data)->
-    console.log 'data', data
+    data.map (data)->
+      return unless body = data.body
+      id = data.user_id
+      
+      console.log (id + ([0...(27-id.length)].map(-> " ").join("")))[if data.premium is "3" then 'red' else 'blue'],
+      (if data.premium is "1" then 'P'.yellow else " "),
+      body
+
   socket.on 'error', (e)->
     console.log 'error', e
 .catch (e)->
