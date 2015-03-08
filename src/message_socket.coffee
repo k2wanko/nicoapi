@@ -5,6 +5,7 @@ _               = require 'underscore'
 {Socket}        = require 'net'
 {parseXml}      = require './util'
 {Promise}       = require 'es6-promise'
+Chat            = require './chat'
 
 class MessageSocket extends EventEmitter2
 
@@ -45,10 +46,7 @@ class MessageSocket extends EventEmitter2
         @emit 'data', res.map (data)->
           return data.thread.$ if data.thread
           
-          if chat = data.chat
-            res = chat.$
-            res.body = chat._
-            return res
+          return Chat(data.chat) if data.chat
       .catch (e)=>
         @emit 'error', e
       buf = ""
