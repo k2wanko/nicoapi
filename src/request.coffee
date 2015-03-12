@@ -40,7 +40,7 @@ class Request
         opt[k] = v
       opt
     
-    (params)->
+    (params, callback)->
       @params = _.clone(params = _.defaults(params, options.params or {}))
       @method = options.method
 
@@ -64,8 +64,16 @@ class Request
 
       options.form = _.defaults(params, (options.form or {})) if _.keys(params).length
 
-      request[@method] options
-      .then parse.bind @
+      promise = request[@method] options
+        .then parse.bind @
 
+      return promise unless _.isFunction callback
+
+      promise
+      .then (res)->
+        callback null, res
+      .catch callback
+      
+      return
     
 module.exports = exports = Request
