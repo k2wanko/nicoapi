@@ -57,4 +57,13 @@ class LiveRequest extends Request
       method: GET
       parse: liveParse
 
+  postkey: new class Request
+    uri: "http://live.nicovideo.jp/api/getpostkey?thread=:thread&block_no=:block"
+    params:
+      thread: 0
+      block: 0
+    parse: (res)->
+      console.log res
+      res
+
 module.exports = exports = new LiveRequest
